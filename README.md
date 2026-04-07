@@ -78,3 +78,13 @@ This project includes ESLint and Prettier to help maintain consistent code quali
 - **ESLint**: Run `npm run lint` to check for code quality issues
 - **Prettier**: Your code will be automatically formatted when you save files (if extension is installed)
 - Both tools are pre-configured for this project and will help you write cleaner, more consistent React code
+
+App name and description
+Lesson-01
+
+Installation instructions
+I recommend this link to give the environment for the GitHub repository downloaded
+https://scrimba.com/intro-to-vite-c03p6pbbdq/~0yhj?via=vite
+
+How to run the development server
+It is run perfectly. I did not have issues running it.
