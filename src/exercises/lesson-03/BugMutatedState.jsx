@@ -13,8 +13,7 @@ export default function BugMutatedState() {
   let [count, setCount] = useState(0);
 
   function handleAdd() {
-    count++;
-    setCount(count);
+    setCount(count + 1);
   }
 
   return (
@@ -27,3 +26,9 @@ export default function BugMutatedState() {
 
 // Explanation:
 // (Write your explanation here)
+/*
+In React, state should be treated as immutable. That means:
+
+We should never modify the existing state value directly
+Instead, we should create a new value and pass it to the setter
+*/
