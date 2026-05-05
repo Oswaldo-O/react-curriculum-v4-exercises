@@ -7,9 +7,10 @@ export default function BugStrictMode() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    setInterval(() => {
+    const interval = setInterval(() => {
       setCount((c) => c + 1);
     }, 1000);
+    return () => clearInterval(interval); // the new
   }, []);
 
   return (
@@ -21,3 +22,5 @@ export default function BugStrictMode() {
 }
 
 // Write your explanation of how StrictMode helps us catch this bug
+//React StrictMode helps catch bugs like this because it intentionally runs certain lifecycle
+// behaviors twice in development (not in production) to expose side effects that are not properly cleaned up.
