@@ -15,10 +15,17 @@ export default function BugEffectLoop() {
 
   useEffect(() => {
     setCount(count + 1);
-  });
+  }, []);
 
   return <p>Bug 1 Count: {count}</p>;
 }
 
 // Explanation:
 // (Write your explanation here)
+/*
+
+useEffect has no dependency array, so it runs after every render.
+ useEffect(() => {
+    setCount(count + 1);
+  },[]);
+*/

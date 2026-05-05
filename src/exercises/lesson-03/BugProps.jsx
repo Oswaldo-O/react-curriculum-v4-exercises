@@ -11,12 +11,13 @@
 
   Use the commented "Explanation" section at the bottom of this lesson's components.
 */
+import { useState } from 'react';
 
 export default function BugProps({ name = 'friend' }) {
-  let message = 'Hello, ' + name;
+  const [message, setMessage] = useState('Hello, ' + name);
 
   function handleChange() {
-    message = 'Hi, ' + name + '!';
+    setMessage('Hi, ' + name + '!');
   }
 
   return (
@@ -29,3 +30,19 @@ export default function BugProps({ name = 'friend' }) {
 
 // Explanation:
 // (Write your explanation here)
+/*
+What’s the mistake?
+
+Over there is  trying to update a regular variable (message) and expecting the UI to update:
+
+React does not track normal variables. It only re-renders when:
+state changes (useState)
+props change
+
+Here’s what happens:
+Component renders → message is "Hello, X"
+We click the button → message changes in memory
+❌ React does NOT re-render → UI stays the same
+
+So your update is essentially invisible to React.
+*/
